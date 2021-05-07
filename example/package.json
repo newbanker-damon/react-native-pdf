@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "appium": "appium",
+    "apium": "apium",
     "start": "react-native start",
     "clean": "yarn clean_native_builds && yarn clean_react_native && yarn clean_node_modules",
     "clean_native_builds": "rm -rf ios/build && rm -rf android/build/* && rm -rf android/app/build/* && rm -rf ios/Build",
@@ -11,7 +11,9 @@
     "clean_node_modules": "rm -rf node_modules/ && yarn cache clean && yarn",
     "test": "jest",
     "test:windows": "yarn jest --config=./jest.windows.config.js --runInBand",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android"
   },
   "author": {
     "name": "Wonday",
@@ -22,12 +24,14 @@
     "url": "https://github.com/wonday/react-native-pdf/issues"
   },
   "dependencies": {
+    "@react-native-community/progress-bar-android": "^1.0.4",
+    "@react-native-community/progress-view": "^1.3.0",
     "react": "16.13.1",
     "react-native": "0.63.2",
     "react-native-orientation-locker": "^1.1.6",
     "react-native-pdf": "file:../",
     "react-native-windows": "^0.63.11",
-    "rn-fetch-blob": "^0.10.16"
+    "rn-fetch-blob": "^0.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -38,6 +42,7 @@
     "eslint": "^6.0.1",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
+    "prop-types": "^15.7.2",
     "react-test-renderer": "16.13.1",
     "selenium-appium": "0.0.15",
     "selenium-webdriver": "4.0.0-alpha.7"
